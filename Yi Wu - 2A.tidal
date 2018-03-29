@@ -1,0 +1,33 @@
+d1 $sound "numbers:0"
+d1 $sound "numbers:0" # room 1
+
+d1 $ sound "numbers:0" # room 2
+d1 $ superimpose (|+| speed "-0.5") $ sound "numbers:0 numbers:1 numbers:2 numbers:3" # room 2
+
+d1 silence
+
+d2 $ sound "numbers:0 numbers:1 numbers:2 numbers:3" |+| vowel "[a e i]/3" # room 2
+
+d2 silence
+
+d1 $ superimpose (|+| speed "-0.75") $ sound "[drum, numbers:0 kurt]" |+| speed "0.5" |+| delay "0.5"
+
+d3 $ sound "[drum, drum*2 bd*8 bd*3 cp8]" |+| gain "1.2"
+
+d3 silence
+
+d1 $ superimpose (|+| speed "-0.75") $ sound "[drum, drum*8 numbers:0 kurt]" |+| speed "0.5" |+| delay "0.5" # room 2
+
+d4 $ sound "bev"
+
+d4 $  slow 8 $ striate 128 $ sound "bev" # room 1 |+| gain "1.2"
+
+d4 $ slow 32 $ striate' 32 (1/16) $ sound "bev"
+
+d1 $ jux (iter 4)  $ sound "[drum, drum*8 numbers:0 kurt]"
+
+d1 $ jux (iter 4)  $ sound "[drum, drum*8 numbers:0 kurt]" |+| speed "0.5" |+| delay "0.5" # room 2
+
+d4 silence
+
+d3 $ sound "[drum, drum*4 bd*8 bd*3 cp8]" |+| gain "1.2"
