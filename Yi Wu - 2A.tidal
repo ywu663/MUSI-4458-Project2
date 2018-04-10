@@ -1,33 +1,79 @@
-d1 $sound "numbers:0"
-d1 $sound "numbers:0" # room 1
+bps (128/120)
 
-d1 $ sound "numbers:0" # room 2
-d1 $ superimpose (|+| speed "-0.5") $ sound "numbers:0 numbers:1 numbers:2 numbers:3" # room 2
+d1 $ sound "CHN_male/2"
+
+d1 $ sound "CHN_male/2" # room 1
+
+d2 $ sound (samples "CHN_precussion" (irand 5))
+
+d2 $ sound (samples "CHN_precussion" (irand 5))
+
+hush
+
+
+d1 $ sound "CHN_datanggu:8*4"
+
+d2 $ sound (samples "pingtan*2" (irand 10))
+
+d2 $ sound (samples "pingtan*4" (irand 10))
+
+
+d3 $ sound "[drum, drum*2 bd*8 bd*3 cp8]"
+
+d4 $ jux (iter 4)  $ sound "[CHN_datanggu:8, CHN_datanggu:8*8 pingtan:8 kurt]"
+
+d4 $ jux (iter 4)  $ sound "[CHN_datanggu:8, CHN_datanggu:8*8 pingtan:8 kurt]" |+| speed "0.5" |+| delay "0.5"
 
 d1 silence
 
-d2 $ sound "numbers:0 numbers:1 numbers:2 numbers:3" |+| vowel "[a e i]/3" # room 2
-
 d2 silence
 
-d1 $ superimpose (|+| speed "-0.75") $ sound "[drum, numbers:0 kurt]" |+| speed "0.5" |+| delay "0.5"
+d4 silence
 
-d3 $ sound "[drum, drum*2 bd*8 bd*3 cp8]" |+| gain "1.2"
+hush
+
+d7 $ sound (samples "akuma1*16" (irand 5))
+
+d4 $ sound (samples "CHN_guqin" (irand 12)) |+| gain "1.1"
+
+hush
+
+d7 $ sound (samples "akuma2*16" (irand 5))
+
+d1 $ sound "pingtan:3 pingtan:4 pingtan:5 pingtan:6"
+
+d1 $ superimpose (|+| speed "-0.75") $ sound "[drum, pingtan:8 kurt]" |+| speed "0.5" |+| delay "0.5"
+
+d3 $ slow 4 $ sound (samples "CHN_female" (irand 3)) |+| gain "0.8"
+
+hush
 
 d3 silence
 
-d1 $ superimpose (|+| speed "-0.75") $ sound "[drum, drum*8 numbers:0 kurt]" |+| speed "0.5" |+| delay "0.5" # room 2
+d1 $ sound "pingtan:3 pingtan:4 pingtan:5 pingtan:6"
 
-d4 $ sound "bev"
+d1 silence
 
-d4 $  slow 8 $ striate 128 $ sound "bev" # room 1 |+| gain "1.2"
+d1 $ superimpose (|+| speed "-0.75") $ sound "[drum, pingtan:8 kurt]" |+| speed "0.5" |+| delay "0.5"
 
-d4 $ slow 32 $ striate' 32 (1/16) $ sound "bev"
+d3 $ sound "[drum, drum*2 bd*8 bd*3 cp8]"
 
-d1 $ jux (iter 4)  $ sound "[drum, drum*8 numbers:0 kurt]"
+d3 silence
 
-d1 $ jux (iter 4)  $ sound "[drum, drum*8 numbers:0 kurt]" |+| speed "0.5" |+| delay "0.5" # room 2
+d7 $ sound (samples "akuma1*16" (irand 5))
+
+d7 $ sound (samples "akuma2*16" (irand 5))
+
+hush
+
+d1 $ jux (iter 4)  $ sound "[CHN_datanggu:8, CHN_datanggu:8*8 pingtan:8 kurt]"
+
+d2 $ jux (iter 4)  $ sound "[CHN_datanggu:8, CHN_datanggu:8*8 pingtan:8 kurt]" |+| speed "0.5" |+| delay "0.5" # room 2
 
 d4 silence
+
+d5 silence
+
+hush
 
 d3 $ sound "[drum, drum*4 bd*8 bd*3 cp8]" |+| gain "1.2"
